@@ -109,3 +109,8 @@ const c = function (e) {
 }(window ? window.location.host : "")
 ```
 通过 `String.fromCharCode` 将代码里的 ASCII 码转议为字符串，不难发现作者的意图！
+
+可以使用 `const c = true` 来代替上述方法，从而关闭环境检测
+
+**严正声明：本方法仅限于学习研究使用，不得用于商业行为和黑客破解行为**
+
