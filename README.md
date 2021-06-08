@@ -1,6 +1,16 @@
 # analyze-DrawSVGPlugin
 analyze DrawSVGPlugin of greensock
 
+`DrawSVGPlugin` 是 greensock 编写的一个强大的 SVG 动画插件，它不是免费使用的，但是他可以免费的在如 codepen 一些代码演示平台使用
+
+如果在其他地方使用的话，你的页面会被跳转到以下页面
+
+https://greensock.com/requires-membership/?plugin=DrawSVGPlugin&source=codepen
+<img src="https://user-images.githubusercontent.com/16754699/121142928-0f62f280-c86f-11eb-8042-0dc9ff4694a9.png" width="100%">
+
+
+下面通过分析其源码，看看他是怎么判断运行环境的
+
 ```js
 
 function w() {
@@ -98,3 +108,4 @@ const c = function (e) {
       + "&source=codepen")
 }(window ? window.location.host : "")
 ```
+通过 `String.fromCharCode` 将代码里的 ASCII 码转议为字符串，不难发现作者的意图！
